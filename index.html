@@ -1,405 +1,408 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Prohibida | Contenido Premium a Tu Alcance</title>
-    <meta name="description" content="Accede a cualquier título de HotMovies al mejor precio en Colombia. Películas y clips en alta calidad, descarga directa y segura.">
+    <title>ZONA PROHIBIDA | Acceso Restringido</title>
+    <meta name="description" content="Catálogo HotMovies desbloqueado para Colombia. Precios en pesos. Sin suscripciones.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Anton', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'toxic-green': '#00FF41',
+                        'off-white': '#F0F0F0',
+                        'deep-black': '#050505',
+                        'dark-gray': '#111111'
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #222 1px, transparent 1px), linear-gradient(to bottom, #222 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
+        /* Custom Utilities */
+        .text-stroke {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+        .text-stroke-hover:hover {
+            -webkit-text-stroke: 0px;
+            color: #00FF41;
         }
 
-        h1, h2, h3, h4, .brand-font {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
+        .hard-shadow {
+            box-shadow: 8px 8px 0px 0px #00FF41;
+        }
+        .hard-shadow-white {
+            box-shadow: 8px 8px 0px 0px #F0F0F0;
         }
 
-        .grunge-border {
-            border: 3px solid black;
-            padding: 5px;
+        /* Glitch effect on hover for logo */
+        .glitch-hover:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #00FF41;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
             display: inline-block;
-            transform: rotate(-2deg);
+            animation: marquee 20s linear infinite;
         }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom heavy styling for the logo feel */
-        .logo-text {
-            letter-spacing: -1px;
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
+<body class="bg-deep-black text-off-white font-mono antialiased selection:bg-toxic-green selection:text-black">
 
-<!-- Navbar -->
-<nav class="bg-white border-b border-gray-200 fixed w-full z-50 top-0 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-                <!-- Using the uploaded image file name directly. Make sure the file is in the same folder -->
-                <img src="zonaprohibida.png" alt="Zona Prohibida Logo" class="w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" style="height: 6rem;">
-                <!-- Fallback Text Logo if image fails loading (hidden by default) -->
-                <span class="hidden brand-font text-2xl font-bold tracking-tighter ml-2">ZONA <span class="bg-black text-white px-1">PROHIBIDA</span></span>
-            </div>
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#como-funciona" class="text-gray-700 hover:text-black font-medium text-sm uppercase tracking-wide">Cómo funciona</a>
-                <a href="#precios" class="text-gray-700 hover:text-black font-medium text-sm uppercase tracking-wide">Precios</a>
-                <a href="#faq" class="text-gray-700 hover:text-black font-medium text-sm uppercase tracking-wide">Preguntas</a>
-                <a href="https://wa.me/57300000000?text=Hola,%20quiero%20solicitar%20un%20título%20de%20Zona%20Prohibida." target="_blank"
-                   class="bg-black text-white px-5 py-2 rounded-sm font-bold uppercase hover:bg-gray-800 transition duration-300 shadow-lg flex items-center gap-2">
-                    <i class="fab fa-whatsapp"></i> Pedir Ahora
-                </a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-700 hover:text-black focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+<!-- Top Alert Bar -->
+<div class="bg-toxic-green text-black font-bold text-xs uppercase py-1 overflow-hidden border-b-2 border-white">
+    <div class="marquee-container">
+        <div class="marquee-content space-x-8">
+            <span>⚠️ SOLO MAYORES DE 18 AÑOS</span>
+            <span>⚠️ CONTENIDO EXCLUSIVO DESBLOQUEADO</span>
+            <span>⚠️ PAGOS ANÓNIMOS VÍA NEQUI</span>
+            <span>⚠️ DESCARGA DIRECTA SIN REGISTROS</span>
+            <span>⚠️ SOLO MAYORES DE 18 AÑOS</span>
+            <span>⚠️ CONTENIDO EXCLUSIVO DESBLOQUEADO</span>
+            <span>⚠️ PAGOS ANÓNIMOS VÍA NEQUI</span>
+            <span>⚠️ DESCARGA DIRECTA SIN REGISTROS</span>
         </div>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#como-funciona" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50">Cómo funciona</a>
-            <a href="#precios" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50">Precios</a>
-            <a href="#faq" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50">Preguntas Frecuentes</a>
-            <a href="https://wa.me/57300000000?text=Hola,%20quiero%20solicitar%20un%20título%20de%20Zona%20Prohibida."
-               class="block w-full text-center mt-4 bg-green-500 text-white px-4 py-3 rounded font-bold uppercase hover:bg-green-600 transition">
-                <i class="fab fa-whatsapp"></i> Contactar ahora
-            </a>
+</div>
+
+<!-- Navbar -->
+<nav class="border-b-2 border-white bg-deep-black/90 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center group cursor-pointer">
+                <img src="Gemini_Generated_Image_gy66kggy66kggy66.jpg" alt="Logo" class="h-10 w-auto invert brightness-200 grayscale contrast-200 mix-blend-screen">
+                <span class="ml-3 font-display text-3xl tracking-wide group-hover:text-toxic-green transition-colors">ZONA<span class="text-toxic-green">PROHIBIDA</span></span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#catalogo" class="text-sm uppercase tracking-widest hover:text-toxic-green hover:underline decoration-2 underline-offset-4 transition-all">Catálogo</a>
+                <a href="#como-funciona" class="text-sm uppercase tracking-widest hover:text-toxic-green hover:underline decoration-2 underline-offset-4 transition-all">Sistema</a>
+                <a href="#faq" class="text-sm uppercase tracking-widest hover:text-toxic-green hover:underline decoration-2 underline-offset-4 transition-all">Faq</a>
+                <a href="https://wa.me/57300000000" class="bg-white text-black px-6 py-2 font-bold uppercase text-sm border-2 border-transparent hover:border-toxic-green hover:bg-black hover:text-toxic-green transition-all duration-200 flex items-center gap-2">
+                    <i class="fas fa-terminal"></i> Iniciar Pedido
+                </a>
+            </div>
         </div>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-bold tracking-widest uppercase mb-4">
-                Exclusivo para Colombia 🇨🇴
-            </span>
-        <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
-            El Catálogo <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">Premium</span><br>
-            Sin pagar en Dólares
-        </h1>
-        <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 font-light">
-            Accede a <strong>cualquier título</strong> de HotMovies.com en máxima calidad. Olvida las suscripciones costosas. Paga en pesos, recibe en privado.
-        </p>
+<section class="relative min-h-[90vh] flex items-center border-b-2 border-white bg-grid-pattern bg-[length:40px_40px]">
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent"></div>
 
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://wa.me/57300000000?text=Hola,%20me%20interesa%20conseguir%20una%20película." target="_blank"
-               class="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 text-white text-lg font-bold rounded-sm shadow-lg transition transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR CONTENIDO
-            </a>
-            <a href="#como-funciona"
-               class="w-full sm:w-auto px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 text-lg font-bold rounded-sm transition flex justify-center items-center gap-2 border border-gray-300">
-                <i class="fas fa-info-circle"></i> Cómo funciona
-            </a>
+    <div class="max-w-7xl mx-auto px-4 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center pt-12 pb-24">
+        <div class="lg:col-span-8">
+            <div class="inline-block border border-toxic-green text-toxic-green px-4 py-1 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-toxic-green/10">
+                Sistema Operativo: Online
+            </div>
+            <h1 class="font-display text-7xl md:text-9xl leading-[0.9] mb-8 uppercase text-white mix-blend-difference">
+                El Catálogo<br>
+                <span class="text-transparent text-stroke hover:text-toxic-green transition-all duration-500 cursor-default">Oculto</span><br>
+                Es Tuyo.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed border-l-4 border-toxic-green pl-6">
+                Accede a la base de datos completa de <span class="text-white font-bold decoration-toxic-green underline">HotMovies.com</span>.
+                <br>Sin registros. Sin tarjetas. Sin rastros.
+                <br>Solo tú, el archivo y un precio ridículo en pesos.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-6">
+                <a href="https://wa.me/57300000000" class="bg-toxic-green text-black px-8 py-5 font-display text-2xl uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-200 hard-shadow-white border-2 border-black flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp"></i> Solicitar Acceso
+                </a>
+                <a href="#precios" class="px-8 py-5 font-display text-2xl uppercase tracking-wider border-2 border-white hover:bg-white hover:text-black transition-all duration-200 flex items-center justify-center">
+                    Ver Tarifas
+                </a>
+            </div>
         </div>
 
-        <div class="mt-8 flex justify-center space-x-6 text-sm text-gray-400 font-medium">
-            <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 100% Confidencial</div>
-            <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Calidad HD/4K</div>
-            <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Pago Fácil (Nequi)</div>
+        <!-- Visual Decorative Element -->
+        <div class="hidden lg:block lg:col-span-4 relative">
+            <div class="border-2 border-white p-2 relative transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div class="bg-dark-gray p-6 aspect-[3/4] flex flex-col justify-between border border-gray-800">
+                    <div class="flex justify-between items-start">
+                        <i class="fas fa-lock text-4xl text-gray-700"></i>
+                        <span class="text-xs text-gray-500 font-mono text-right">ENCRYPTED<br>FILE_ID: 992-X</span>
+                    </div>
+                    <div class="text-center opacity-50">
+                        <i class="fas fa-play-circle text-6xl mb-4"></i>
+                        <p class="text-sm uppercase tracking-widest">Preview no disponible</p>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-toxic-green w-3/4 animate-pulse"></div>
+                        </div>
+                        <div class="flex justify-between text-xs mt-2 text-toxic-green">
+                            <span>DOWNLOADING...</span>
+                            <span>78%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sticker -->
+                <div class="absolute -bottom-6 -left-6 bg-black text-white p-4 border-2 border-toxic-green hard-shadow transform -rotate-6">
+                    <span class="font-display text-2xl">100%<br>ANÓNIMO</span>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Background Pattern -->
-    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
 </section>
 
-<!-- Problem / Agitation Section -->
-<section class="bg-black text-white py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-8 text-gray-100">¿Te suena familiar?</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-left">
-            <div class="p-6 border border-gray-800 rounded bg-gray-900">
-                <i class="fas fa-ban text-red-500 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Contenido Bloqueado</h3>
-                <p class="text-gray-400 text-sm">Encuentras el video perfecto, pero te pide tarjeta de crédito internacional o suscripciones mensuales que no vas a usar.</p>
+<!-- The Problem (Raw Stats) -->
+<section class="bg-white text-black py-20 border-b-2 border-black">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-0 border-2 border-black">
+            <!-- Box 1 -->
+            <div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-black hover:bg-toxic-green transition-colors duration-300 group">
+                <h3 class="font-display text-5xl mb-4 group-hover:text-white">ERROR 404</h3>
+                <p class="font-bold uppercase tracking-widest mb-2">Contenido Bloqueado</p>
+                <p class="text-sm text-gray-600 group-hover:text-black">Deja de sufrir con tarjetas rechazadas y bloqueos regionales. Rompemos las barreras por ti.</p>
             </div>
-            <div class="p-6 border border-gray-800 rounded bg-gray-900">
-                <i class="fas fa-dollar-sign text-red-500 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Precios Excesivos</h3>
-                <p class="text-gray-400 text-sm">Pagar $20 o $30 dólares por una sola película es absurdo cuando el cambio de moneda juega en tu contra.</p>
+            <!-- Box 2 -->
+            <div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-black hover:bg-black hover:text-white transition-colors duration-300 group">
+                <h3 class="font-display text-5xl mb-4 text-toxic-green">$30 USD</h3>
+                <p class="font-bold uppercase tracking-widest mb-2">Es un robo</p>
+                <p class="text-sm text-gray-600 group-hover:text-gray-400">¿Pagar más de 100k por una película? Olvídalo. Te damos el mismo archivo por una fracción.</p>
             </div>
-            <div class="p-6 border border-gray-800 rounded bg-gray-900">
-                <i class="fas fa-virus text-red-500 text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Sitios Inseguros</h3>
-                <p class="text-gray-400 text-sm">Intentas buscarlo gratis y terminas en páginas llenas de publicidad invasiva, virus y enlaces rotos.</p>
+            <!-- Box 3 -->
+            <div class="p-10 hover:bg-toxic-green transition-colors duration-300 group">
+                <h3 class="font-display text-5xl mb-4 group-hover:text-white">100%</h3>
+                <p class="font-bold uppercase tracking-widest mb-2">Garantizado</p>
+                <p class="text-sm text-gray-600 group-hover:text-black">Calidad original. Si no es Full HD/4K, te devolvemos tu dinero. Sin letra chica.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Solution / Benefits Section -->
-<section id="beneficios" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">LA SOLUCIÓN DEFINITIVA</h2>
-            <p class="text-xl text-gray-600">Simplicidad, anonimato y precios justos.</p>
+<!-- Pricing / The Offer -->
+<section id="precios" class="py-24 bg-deep-black relative overflow-hidden">
+    <!-- Background Noise -->
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+        <h2 class="font-display text-6xl text-center mb-16 uppercase text-white">
+            Tarifas <span class="text-toxic-green">Locales</span>
+        </h2>
+
+        <!-- Card 1 -->
+        <div class="flex flex-col md:flex-row border-2 border-gray-800 bg-dark-gray mb-8 hover:border-toxic-green transition-colors duration-300">
+            <div class="p-8 md:w-2/3 border-b-2 md:border-b-0 md:border-r-2 border-gray-800 flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-2">
+                    <i class="fas fa-film text-gray-500"></i>
+                    <h3 class="font-display text-3xl uppercase">Clips / Escenas</h3>
+                </div>
+                <p class="text-gray-400 text-sm">Para cuando buscas algo específico y rápido. Calidad original.</p>
+            </div>
+            <div class="p-8 md:w-1/3 flex flex-col justify-center items-center bg-black">
+                <span class="text-3xl font-bold text-toxic-green">$5.000 COP</span>
+                <a href="https://wa.me/57300000000?text=Hola,%20quiero%20un%20Clip." class="mt-4 text-xs font-bold uppercase tracking-widest border-b border-toxic-green hover:text-toxic-green pb-1">Pedir Ahora</a>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg">1</div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-900">Catálogo Ilimitado</h4>
-                            <p class="text-gray-600">Si está en HotMovies.com, lo tenemos. Tú eliges el título exacto que quieres ver.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg">2</div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-900">Ahorro Masivo</h4>
-                            <p class="text-gray-600">Consigue contenido premium por menos de lo que cuesta un almuerzo. Precios fijos en pesos colombianos.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg">3</div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-900">Propiedad Real</h4>
-                            <p class="text-gray-600">No es streaming. Te enviamos el archivo para que lo descargues y sea tuyo para siempre.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg">4</div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-900">Privacidad Total</h4>
-                            <p class="text-gray-600">Entrega discreta vía Google Drive o WeTransfer. Sin historial en tu tarjeta de crédito.</p>
-                        </div>
-                    </li>
+        <!-- Card 2 (Featured) -->
+        <div class="flex flex-col md:flex-row border-2 border-white bg-white text-black relative transform md:scale-105 hard-shadow">
+            <div class="absolute top-0 right-0 bg-toxic-green text-black text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                Más Vendido
+            </div>
+            <div class="p-8 md:w-2/3 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-2">
+                    <i class="fas fa-video text-black"></i>
+                    <h3 class="font-display text-4xl uppercase">Película Completa</h3>
+                </div>
+                <p class="text-gray-800 text-sm font-bold">El largometraje entero. Sin cortes. Alta Definición.</p>
+                <ul class="mt-4 text-xs space-y-1 text-gray-600 font-mono">
+                    <li>[+] Link Privado de Google Drive</li>
+                    <li>[+] Descarga ilimitada</li>
+                    <li>[+] Formato MP4 Compatible</li>
                 </ul>
             </div>
-            <div class="order-1 md:order-2 bg-gray-100 p-8 rounded-lg border-2 border-gray-900 relative">
-                <!-- Decoración visual tipo "Sello" -->
-                <div class="absolute -top-5 -right-5 bg-red-600 text-white font-bold py-2 px-4 transform rotate-12 shadow-lg z-10">
-                    PRECIO BAJO
-                </div>
-                <h3 class="text-2xl font-bold mb-6 text-center border-b-2 border-gray-300 pb-4">LISTA DE PRECIOS</h3>
-
-                <div class="space-y-6">
-                    <div class="flex justify-between items-center p-4 bg-white shadow-sm border-l-4 border-black">
-                        <div>
-                            <h4 class="text-xl font-bold">CLIPS / ESCENAS</h4>
-                            <p class="text-sm text-gray-500">Videos cortos o escenas específicas.</p>
-                        </div>
-                        <div class="text-right">
-                            <span class="block text-2xl font-bold text-green-600">$5.000</span>
-                            <span class="text-xs text-gray-400">COP</span>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center p-4 bg-white shadow-sm border-l-4 border-black relative overflow-hidden">
-                        <!-- Shine effect -->
-                        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 translate-x-[-150%] animate-pulse"></div>
-                        <div>
-                            <h4 class="text-xl font-bold">PELÍCULAS COMPLETAS</h4>
-                            <p class="text-sm text-gray-500">Films de larga duración. Full HD.</p>
-                        </div>
-                        <div class="text-right">
-                            <span class="block text-3xl font-bold text-green-600">$10.000</span>
-                            <span class="text-xs text-gray-400">COP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 text-center">
-                    <a href="https://wa.me/57300000000?text=Hola,%20quiero%20comprar%20una%20película."
-                       class="inline-block w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-wide transition">
-                        Hacer Pedido Ahora
-                    </a>
-                </div>
+            <div class="p-8 md:w-1/3 flex flex-col justify-center items-center bg-black text-white">
+                <span class="text-4xl font-display text-toxic-green">$10.000</span>
+                <span class="text-xs text-gray-500 mb-4">COP / UNIDAD</span>
+                <a href="https://wa.me/57300000000?text=Hola,%20quiero%20una%20Pelicula%20Completa." class="w-full bg-toxic-green text-black font-bold text-center py-3 uppercase text-sm hover:bg-white transition-colors">
+                    Comprar
+                </a>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- How it Works Section -->
-<section id="como-funciona" class="py-20 bg-gray-900 text-white relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">TU PEDIDO EN 3 PASOS</h2>
-
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div class="relative p-6">
-                <div class="w-20 h-20 mx-auto bg-green-500 rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg z-10 relative">
-                    <i class="fab fa-whatsapp text-white"></i>
-                </div>
-                <!-- Connector Line (Desktop) -->
-                <div class="hidden md:block absolute top-16 left-1/2 w-full h-1 bg-gray-700 -z-0"></div>
-
-                <h3 class="text-xl font-bold mb-3">1. Contacta</h3>
-                <p class="text-gray-400">Escríbenos al WhatsApp <span class="text-green-400 font-bold">+57 300000000</span> con el nombre del título que deseas.</p>
-            </div>
-
-            <div class="relative p-6">
-                <div class="w-20 h-20 mx-auto bg-white text-black rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg z-10 relative">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <!-- Connector Line (Desktop) -->
-                <div class="hidden md:block absolute top-16 left-1/2 w-full h-1 bg-gray-700 -z-0"></div>
-
-                <h3 class="text-xl font-bold mb-3">2. Paga</h3>
-                <p class="text-gray-400">Realiza el pago de forma segura y rápida a través de <strong class="text-white">Nequi</strong>.</p>
-            </div>
-
-            <div class="relative p-6">
-                <div class="w-20 h-20 mx-auto bg-blue-600 rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg z-10 relative">
-                    <i class="fas fa-download text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">3. Descarga</h3>
-                <p class="text-gray-400">Recibe tu enlace privado de <strong>Drive o WeTransfer</strong> y disfruta tu contenido.</p>
-            </div>
-        </div>
-
-        <div class="mt-12 text-center">
-            <p class="text-sm text-gray-500 italic mb-4">* Tiempo de respuesta promedio: menos de 30 minutos.</p>
-            <a href="https://wa.me/57300000000?text=Hola,%20tengo%20el%20nombre%20de%20la%20película%20que%20quiero."
-               class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-sm text-black bg-green-500 hover:bg-green-400 md:text-lg transition">
-                <i class="fab fa-whatsapp mr-2"></i> Iniciar Pedido
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">LO QUE DICEN NUESTROS CLIENTES</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Testimonio 1 -->
-            <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                <div class="flex text-yellow-400 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">"Llevaba meses buscando una película específica y aquí la conseguí en minutos. La calidad es excelente y el trato muy discreto."</p>
-                <p class="font-bold text-gray-900 text-sm">- Carlos M.</p>
-            </div>
-            <!-- Testimonio 2 -->
-            <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                <div class="flex text-yellow-400 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">"Precios inmejorables. Pagar 10k por una película que vale $25 dólares afuera es un regalo. Recomendados."</p>
-                <p class="font-bold text-gray-900 text-sm">- J.R.</p>
-            </div>
-            <!-- Testimonio 3 -->
-            <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                <div class="flex text-yellow-400 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">"Súper rápido. Pagué por Nequi y a los 10 minutos ya tenía el link en mi WhatsApp. Muy serios."</p>
-                <p class="font-bold text-gray-900 text-sm">- Felipe A.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Guarantee & Security -->
-<section class="py-16 bg-white border-t border-gray-200">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-        <div class="inline-block p-4 rounded-full bg-gray-100 mb-4">
-            <i class="fas fa-shield-alt text-4xl text-black"></i>
-        </div>
-        <h2 class="text-3xl font-bold mb-4">GARANTÍA DE SATISFACCIÓN</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-            Sabemos que la confianza es clave. Si el enlace que recibes no funciona o la calidad no es la prometida,
-            te enviamos un nuevo enlace o te devolvemos tu dinero. Sin preguntas complicadas.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-                <span class="flex items-center px-4 py-2 bg-gray-50 border rounded text-sm font-medium text-gray-700">
-                    <i class="fas fa-lock mr-2 text-green-500"></i> Compra Segura
-                </span>
-            <span class="flex items-center px-4 py-2 bg-gray-50 border rounded text-sm font-medium text-gray-700">
-                    <i class="fas fa-user-secret mr-2 text-black"></i> 100% Anónimo
-                </span>
-            <span class="flex items-center px-4 py-2 bg-gray-50 border rounded text-sm font-medium text-gray-700">
-                    <i class="fas fa-bolt mr-2 text-yellow-500"></i> Entrega Rápida
-                </span>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section id="faq" class="py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-10">PREGUNTAS FRECUENTES</h2>
+<!-- How it works (Terminal Style) -->
+<section id="como-funciona" class="py-24 border-t-2 border-gray-800 bg-dark-gray font-mono">
+    <div class="max-w-5xl mx-auto px-4">
+        <h2 class="font-display text-4xl mb-12 uppercase border-l-8 border-toxic-green pl-6">
+            Protocolo de Adquisición
+        </h2>
 
         <div class="space-y-4">
-            <!-- FAQ Item -->
-            <details class="bg-white border border-gray-200 rounded p-4 group cursor-pointer shadow-sm">
-                <summary class="font-bold text-gray-900 flex justify-between items-center list-none">
-                    ¿Realmente pueden conseguir cualquier película?
-                    <span class="text-gray-400 group-open:text-black transition transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+            <!-- Step 1 -->
+            <div class="group border border-gray-700 p-6 hover:border-toxic-green hover:bg-black transition-all cursor-default">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-6xl text-gray-800 group-hover:text-toxic-green transition-colors">01</div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-xl uppercase mb-2 group-hover:text-white">Identificar Objetivo</h4>
+                        <p class="text-gray-400 text-sm">Ingresa a HotMovies, encuentra el título que deseas y copia el nombre exacto.</p>
+                    </div>
+                    <div class="hidden md:block text-toxic-green opacity-0 group-hover:opacity-100 font-bold">
+                        &gt;_ INPUT_ACCEPTED
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="group border border-gray-700 p-6 hover:border-toxic-green hover:bg-black transition-all cursor-default">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-6xl text-gray-800 group-hover:text-toxic-green transition-colors">02</div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-xl uppercase mb-2 group-hover:text-white">Transferencia Segura</h4>
+                        <p class="text-gray-400 text-sm">Escríbenos al WhatsApp. Te damos los datos de Nequi. Pagas de forma anónima.</p>
+                    </div>
+                    <div class="hidden md:block text-toxic-green opacity-0 group-hover:opacity-100 font-bold">
+                        &gt;_ TRANSACTION_OK
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="group border border-gray-700 p-6 hover:border-toxic-green hover:bg-black transition-all cursor-default">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-6xl text-gray-800 group-hover:text-toxic-green transition-colors">03</div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-xl uppercase mb-2 group-hover:text-white">Extracción de Datos</h4>
+                        <p class="text-gray-400 text-sm">Recibes un enlace de Google Drive. El archivo es tuyo para siempre.</p>
+                    </div>
+                    <div class="hidden md:block text-toxic-green opacity-0 group-hover:opacity-100 font-bold">
+                        &gt;_ DOWNLOAD_START
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials (Redacted Style) -->
+<section class="py-20 bg-deep-black border-t-2 border-white text-center">
+    <div class="max-w-3xl mx-auto px-4">
+        <i class="fas fa-quote-left text-4xl text-gray-800 mb-8"></i>
+        <h3 class="font-display text-3xl uppercase mb-12">Usuarios Verificados</h3>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div class="bg-dark-gray p-6 border-l-2 border-toxic-green">
+                <p class="text-sm text-gray-300 font-mono mb-4">"Busqué [CENSURADO] por todos lados y solo aquí lo encontré sin virus y rápido. El precio es absurdo para la calidad."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
+                    <span class="text-xs font-bold text-toxic-green">CLIENTE_ID_4021</span>
+                </div>
+            </div>
+            <div class="bg-dark-gray p-6 border-l-2 border-toxic-green">
+                <p class="text-sm text-gray-300 font-mono mb-4">"Respuesta inmediata en WhatsApp. Pagué y a los 5 minutos tenía el link. 10/10."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
+                    <span class="text-xs font-bold text-toxic-green">CLIENTE_ID_8892</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-off-white text-black">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="font-display text-5xl mb-12 uppercase text-center">Datos del Sistema</h2>
+
+        <div class="space-y-2">
+            <details class="group bg-white border-2 border-black open:bg-black open:text-white transition-all">
+                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-lg uppercase">
+                    ¿El contenido es de alta calidad?
+                    <span class="transition group-open:rotate-180">
+                            <i class="fas fa-plus"></i>
+                        </span>
                 </summary>
-                <p class="text-gray-600 mt-3 text-sm">Sí. Si está disponible en el catálogo de HotMovies.com, podemos conseguirla para ti en alta calidad.</p>
+                <div class="text-gray-600 group-open:text-gray-300 px-6 pb-6 text-sm font-mono border-t border-gray-200 group-open:border-gray-800 pt-4">
+                    Absolutamente. Rippeamos el contenido directamente de la fuente en su máxima resolución disponible (1080p o 4K). No comprimimos los archivos.
+                </div>
             </details>
 
-            <!-- FAQ Item -->
-            <details class="bg-white border border-gray-200 rounded p-4 group cursor-pointer shadow-sm">
-                <summary class="font-bold text-gray-900 flex justify-between items-center list-none">
-                    ¿Cómo recibo el contenido?
-                    <span class="text-gray-400 group-open:text-black transition transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+            <details class="group bg-white border-2 border-black open:bg-black open:text-white transition-all">
+                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-lg uppercase">
+                    ¿Cómo protegen mi privacidad?
+                    <span class="transition group-open:rotate-180">
+                            <i class="fas fa-plus"></i>
+                        </span>
                 </summary>
-                <p class="text-gray-600 mt-3 text-sm">Te enviamos un enlace directo de Google Drive o WeTransfer a tu WhatsApp. Solo tienes que hacer clic y descargar.</p>
+                <div class="text-gray-600 group-open:text-gray-300 px-6 pb-6 text-sm font-mono border-t border-gray-200 group-open:border-gray-800 pt-4">
+                    Nequi no comparte qué estás comprando. Nosotros no guardamos registros de chat más allá de la transacción. El enlace de Drive es privado y seguro.
+                </div>
             </details>
 
-            <!-- FAQ Item -->
-            <details class="bg-white border border-gray-200 rounded p-4 group cursor-pointer shadow-sm">
-                <summary class="font-bold text-gray-900 flex justify-between items-center list-none">
-                    ¿Cuánto tiempo demora la entrega?
-                    <span class="text-gray-400 group-open:text-black transition transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+            <details class="group bg-white border-2 border-black open:bg-black open:text-white transition-all">
+                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-lg uppercase">
+                    ¿Qué pasa si el link no funciona?
+                    <span class="transition group-open:rotate-180">
+                            <i class="fas fa-plus"></i>
+                        </span>
                 </summary>
-                <p class="text-gray-600 mt-3 text-sm">Generalmente enviamos el enlace en menos de 30 minutos después de confirmar el pago. En horarios de alta demanda, máximo 2 horas.</p>
-            </details>
-
-            <!-- FAQ Item -->
-            <details class="bg-white border border-gray-200 rounded p-4 group cursor-pointer shadow-sm">
-                <summary class="font-bold text-gray-900 flex justify-between items-center list-none">
-                    ¿Es seguro pagar por Nequi?
-                    <span class="text-gray-400 group-open:text-black transition transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                </summary>
-                <p class="text-gray-600 mt-3 text-sm">Totalmente. Nequi es una plataforma segura. Además, no necesitamos tus datos bancarios ni tarjetas de crédito.</p>
-            </details>
-
-            <!-- FAQ Item -->
-            <details class="bg-white border border-gray-200 rounded p-4 group cursor-pointer shadow-sm">
-                <summary class="font-bold text-gray-900 flex justify-between items-center list-none">
-                    ¿En qué calidad están los videos?
-                    <span class="text-gray-400 group-open:text-black transition transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                </summary>
-                <p class="text-gray-600 mt-3 text-sm">Entregamos la máxima calidad disponible del video original (usualmente HD 1080p o 4K si está disponible).</p>
+                <div class="text-gray-600 group-open:text-gray-300 px-6 pb-6 text-sm font-mono border-t border-gray-200 group-open:border-gray-800 pt-4">
+                    Garantía total. Si el link falla, te generamos uno nuevo al instante o te devolvemos el dinero. Sin discusiones.
+                </div>
             </details>
         </div>
     </div>
 </section>
 
-<!-- Final CTA / Footer -->
-<footer class="bg-black text-white py-16 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 font-oswald uppercase tracking-tight">¿Listo para ver lo prohibido?</h2>
-        <p class="text-gray-400 mb-8 text-lg">Deja de buscar enlaces rotos. Consigue exactamente lo que quieres, ahora mismo.</p>
+<!-- Footer -->
+<footer class="bg-black text-white pt-24 pb-8 border-t-8 border-toxic-green">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
 
-        <a href="https://wa.me/57300000000?text=Hola,%20estoy%20listo%20para%20hacer%20mi%20pedido."
-           class="inline-flex items-center justify-center px-10 py-5 bg-green-500 hover:bg-green-600 text-white text-xl font-bold rounded-sm shadow-xl transition transform hover:scale-105">
-            <i class="fab fa-whatsapp mr-3 text-2xl"></i> PEDIR POR $10.000 COP
-        </a>
+        <h2 class="font-display text-8xl md:text-[10rem] leading-none text-transparent text-stroke opacity-30 select-none hover:opacity-100 hover:text-white transition-all duration-700">
+            PROHIBIDA
+        </h2>
 
-        <div class="mt-12 pt-8 border-t border-gray-800 text-sm text-gray-500">
-            <p>&copy; 2024 Zona Prohibida. Todos los derechos reservados.</p>
-            <p class="mt-2 text-xs">Servicio exclusivo para mayores de 18 años.</p>
+        <div class="mt-[-2rem] md:mt-[-4rem] z-10">
+            <a href="https://wa.me/57300000000" class="inline-block bg-toxic-green text-black font-display text-3xl uppercase px-12 py-4 hard-shadow-white hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all border-2 border-black">
+                Contactar Agente
+            </a>
+        </div>
+
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-center w-full border-t border-gray-900 pt-8 text-xs font-mono text-gray-500">
+            <p>&copy; 2024 ZONA PROHIBIDA. SYSTEM_ID: COL_BOG_01</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <span>18+ ONLY</span>
+                <span>SECURE CONNECTION</span>
+                <span>ENCRYPTED</span>
+            </div>
         </div>
     </div>
 </footer>
