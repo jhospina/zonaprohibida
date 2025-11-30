@@ -9,8 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
 
-    <! -- No follow for search engines -->
-    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <script>
         tailwind.config = {
@@ -105,7 +108,7 @@
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#beneficios" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Beneficios</a>
                 <a href="#precios" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Precios</a>
-                <a href="https://wa.me/573244506030" class="bg-forbidden-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold text-sm uppercase transition-all duration-300 glow-button flex items-center gap-2">
+                <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" class="bg-forbidden-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold text-sm uppercase transition-all duration-300 glow-button flex items-center gap-2">
                     <i class="fab fa-whatsapp"></i> Pedir Ahora
                 </a>
             </div>
@@ -124,7 +127,7 @@
         <div class="px-6 py-4 space-y-4">
             <a href="#beneficios" class="block text-base font-bold uppercase tracking-wider text-gray-300 hover:text-forbidden-red transition-colors mobile-link">Beneficios</a>
             <a href="#precios" class="block text-base font-bold uppercase tracking-wider text-gray-300 hover:text-forbidden-red transition-colors mobile-link">Precios</a>
-            <a href="https://wa.me/573244506030" class="block w-full text-center bg-forbidden-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold text-sm uppercase transition-all duration-300 shadow-lg mobile-link">
+            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" class="block w-full text-center bg-forbidden-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold text-sm uppercase transition-all duration-300 shadow-lg mobile-link">
                 <i class="fab fa-whatsapp mr-2"></i> Pedir Ahora
             </a>
         </div>
@@ -151,7 +154,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style="animation-delay: 0.3s;">
-            <a href="https://wa.me/573244506030?text=Hola,%20quiero%20ver%20el%20catálogo." class="w-full sm:w-auto px-10 py-5 bg-forbidden-red hover:bg-red-700 text-white text-xl font-bold rounded-md transition-all transform hover:scale-105 glow-button flex items-center justify-center gap-3">
+            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" class="w-full sm:w-auto px-10 py-5 bg-forbidden-red hover:bg-red-700 text-white text-xl font-bold rounded-md transition-all transform hover:scale-105 glow-button flex items-center justify-center gap-3">
                 <i class="fab fa-whatsapp text-2xl"></i> PERDIR AHORA
             </a>
             <a href="#como-funciona" class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xl font-bold rounded-md border border-white/20 transition-all flex items-center justify-center gap-3">
@@ -212,7 +215,7 @@
         </h2>
         <p class="text-gray-400 mb-10 text-lg">Todo el contenido de la industria está disponible para ti.</p>
 
-        <a href="https://www.hotmovies.com" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 border-2 border-white hover:border-forbidden-red hover:bg-forbidden-red text-white font-bold text-xl uppercase tracking-widest transition-all duration-300 transform hover:scale-105">
+        <a href="https://www.hotmovies.com/all/search?q=" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 border-2 border-white hover:border-forbidden-red hover:bg-forbidden-red text-white font-bold text-xl uppercase tracking-widest transition-all duration-300 transform hover:scale-105">
             Ver Catálogo Completo <i class="fas fa-external-link-alt ml-2"></i>
         </a>
         <p class="mt-4 text-xs text-gray-600 uppercase tracking-widest">Serás redirigido a HotMovies.com para elegir tu título</p>
@@ -223,32 +226,45 @@
 <section id="beneficios" class="py-20 bg-dark-bg relative z-20">
     <div class="max-w-7xl mx-auto px-4">
 
-        <h2 class="font-display text-5xl md:text-6xl mb-4 text-white text-center">¿Te suena familiar?</h2>
+        <h2 class="font-display text-5xl md:text-6xl mb-4 text-white text-center">¿Por Qué <span class="text-forbidden-red">Elegirnos</span>?</h2>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-4 gap-8">
             <!-- Benefit 1 -->
             <div class="p-8 rounded-2xl bg-card-bg border border-white/5 hover:border-forbidden-red/50 transition-colors group">
                 <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition">
                     <i class="fas fa-unlock text-2xl text-forbidden-red"></i>
                 </div>
-                <h3 class="font-display text-3xl mb-3 text-white">Contenido Bloqueado</h3>
-                <p class="text-gray-400 leading-relaxed">Encuentras el video perfecto, pero te pide tarjeta de crédito internacional o suscripciones mensuales que no vas a usar.</p>
+                <h3 class="font-display text-3xl mb-3 text-white">Acceso Total al Catálogo</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Obtén cualquier película o escena disponible en HotMovies.com sin restricciones. Más de 200,000 títulos a tu alcance.
+                </p>
             </div>
             <!-- Benefit 2 -->
             <div class="p-8 rounded-2xl bg-card-bg border border-white/5 hover:border-forbidden-red/50 transition-colors group">
                 <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition">
                     <i class="fas fa-piggy-bank text-2xl text-forbidden-red"></i>
                 </div>
-                <h3 class="font-display text-3xl mb-3 text-white">Precio Justo</h3>
-                <p class="text-gray-400 leading-relaxed">Paga en pesos colombianos. Una fracción de lo que costaría la suscripción o el PPV original en dólares.</p>
+                <h3 class="font-display text-3xl mb-3 text-white">Precio Fijo muy Bajo</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Consigue contenido premium por menos de lo que cuesta un almuerzo. Precios fijos en pesos colombianos.
+                    Solo pagas por lo que quieres, cuando lo quieres.
+                </p>
             </div>
             <!-- Benefit 3 -->
             <div class="p-8 rounded-2xl bg-card-bg border border-white/5 hover:border-forbidden-red/50 transition-colors group">
                 <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition">
                     <i class="fas fa-user-secret text-2xl text-forbidden-red"></i>
                 </div>
-                <h3 class="font-display text-3xl mb-3 text-white">Sitios Inseguros</h3>
-                <p class="text-gray-400 leading-relaxed">Intentas buscarlo gratis y terminas en páginas llenas de publicidad invasiva, virus y enlaces rotos.</p>
+                <h3 class="font-display text-3xl mb-3 text-white">Total Discreción</h3>
+                <p class="text-gray-400 leading-relaxed">No te pedimos datos personales ni bancarios. Solo tu pedido y un número de WhatsApp para enviarte el enlace privado. Tu privacidad es nuestra prioridad.</p>
+            </div>
+            <!-- Benefit 4 -->
+            <div class="p-8 rounded-2xl bg-card-bg border border-white/5 hover:border-forbidden-red/50 transition-colors group">
+                <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition">
+                    <i class="fas fa-download text-2xl text-forbidden-red"></i>
+                </div>
+                <h3 class="font-display text-3xl mb-3 text-white">Propiedad Real</h3>
+                <p class="text-gray-400 leading-relaxed">No es streaming. Te enviamos el archivo para que lo descargues y sea tuyo para siempre.</p>
             </div>
         </div>
     </div>
@@ -258,13 +274,13 @@
 <section id="precios" class="py-24 bg-black relative overflow-hidden bg-noise">
     <div class="max-w-6xl mx-auto px-4 relative z-10">
         <div class="text-center mb-16">
-            <h2 class="font-display text-5xl md:text-6xl mb-4 text-white">Elige tu <span class="text-forbidden-red">Experiencia</span></h2>
-            <p class="text-gray-400 text-lg">Calidad HD/4K garantizada en todos los pedidos.</p>
+            <h2 class="font-display text-5xl md:text-6xl mb-4 text-white">Elige lo que <span class="text-forbidden-red">Quieres</span></h2>
+            <p class="text-gray-400 text-lg">En la mejor calidad posible HD/Full HD/4K</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <!-- Card 1 -->
-            <div class="rounded-2xl bg-card-bg border border-white/10 p-8 flex flex-col hover:transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="rounded-2xl bg-card-bg border border-forbidden-red p-8 flex flex-col hover:transform hover:-translate-y-2 transition-transform duration-300">
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <span class="text-gray-400 font-bold uppercase text-xs tracking-widest">Opción Rápida</span>
@@ -276,16 +292,18 @@
                 </div>
                 <ul class="space-y-4 mb-8 flex-1">
                     <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Videos cortos o escenas puntuales</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Calidad Original</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Entrega Flash</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Máxima Resolución disponible</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Enlace privado de descarga</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-forbidden-red mr-3"></i> Garantía de satisfacción</li>
                 </ul>
                 <div class="border-t border-white/10 pt-6">
                     <div class="flex justify-between items-end mb-4">
                         <span class="text-gray-400 text-sm">Precio único</span>
                         <span class="text-4xl font-display text-white">$5.000 <span class="text-lg text-gray-500">COP</span></span>
                     </div>
-                    <a href="https://wa.me/573244506030text=Hola,%20quiero%20comprar%20un%20clip." class="block w-full py-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-bold text-center transition-colors">
-                        Pedir Clip
+                    <a href="https://wa.me/573244506030text=Hola,%20quiero%20comprar%20una%20escena%20o%20clip."
+                       class="block w-full py-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-bold text-center transition-colors">
+                        Contactar Ahora
                     </a>
                 </div>
             </div>
@@ -298,7 +316,7 @@
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <span class="text-forbidden-red font-bold uppercase text-xs tracking-widest">Experiencia Completa</span>
-                        <h3 class="font-display text-5xl mt-1 text-white">Película Full</h3>
+                        <h3 class="font-display text-5xl mt-1 text-white">Película Completa</h3>
                     </div>
                     <div class="bg-forbidden-red p-3 rounded-lg shadow-lg shadow-red-600/30">
                         <i class="fas fa-video text-2xl text-white"></i>
@@ -307,7 +325,7 @@
                 <ul class="space-y-4 mb-8 flex-1">
                     <li class="flex items-center text-white"><i class="fas fa-check-circle text-forbidden-red mr-3"></i> Largometraje completo</li>
                     <li class="flex items-center text-white"><i class="fas fa-check-circle text-forbidden-red mr-3"></i> Máxima Resolución (1080p/4K)</li>
-                    <li class="flex items-center text-white"><i class="fas fa-check-circle text-forbidden-red mr-3"></i> Enlace privado de por vida</li>
+                    <li class="flex items-center text-white"><i class="fas fa-check-circle text-forbidden-red mr-3"></i> Enlace privado de descarga</li>
                     <li class="flex items-center text-white"><i class="fas fa-check-circle text-forbidden-red mr-3"></i> Garantía de satisfacción</li>
                 </ul>
                 <div class="border-t border-white/10 pt-6">
@@ -315,8 +333,8 @@
                         <span class="text-gray-400 text-sm">Mejor Valor</span>
                         <span class="text-5xl font-display text-white">$10.000 <span class="text-lg text-gray-500">COP</span></span>
                     </div>
-                    <a href="https://wa.me/573244506030?text=Hola,%20quiero%20comprar%20una%20película." class="block w-full py-4 rounded-lg bg-forbidden-red hover:bg-red-700 text-white font-bold text-center transition-all glow-button">
-                        Comprar Ahora
+                    <a href="https://wa.me/573244506030?text=Hola,%20quiero%20comprar%20una%20pel%C3%ADcula%20completa." class="block w-full py-4 rounded-lg bg-forbidden-red hover:bg-red-700 text-white font-bold text-center transition-all glow-button">
+                        Contactar Ahora
                     </a>
                 </div>
             </div>
@@ -466,7 +484,8 @@
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="font-display text-5xl md:text-7xl text-gray-800 mb-8 uppercase select-none hover:text-gray-700 transition-colors">Zona Prohibida</h2>
 
-        <a href="https://wa.me/573244506030?text=Hola,%20quiero%20hacer%20un%20pedido." class="inline-block bg-forbidden-red text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-700 transition-all glow-button mb-12">
+        <a href="https://wa.me/573244506030?text=Hola,%20%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F"
+           class="inline-block bg-forbidden-red text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-700 transition-all glow-button mb-12">
             <i class="fab fa-whatsapp mr-2"></i> Contactar Ahora
         </a>
 
