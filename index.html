@@ -33,15 +33,25 @@
         gtag('config', 'G-Z6P85TFS7P');
     </script>
 
+    <!-- CONFIGURACIÓN DE TRACKING (EXOCLICK + GOOGLE ANALYTICS) -->
     <script>
-        // Usamos este método manual para que cuente SOLO cuando hacen clic, no cuando cargan la página.
         const exoClickConversionUrl = "https://main.exoclick.com/tag.php?goal=c58b3a9c75f4d442d59ca622910c054b";
 
-        function trackConversion() {
-            // Crea una imagen invisible que avisa a ExoClick de la conversión
+        function trackConversion(locationName) {
+            // 1. Tracking ExoClick
             var pixel = new Image();
             pixel.src = exoClickConversionUrl;
-            console.log("Conversión enviada a ExoClick (ID: c58b3a9c75f4d442d59ca622910c054b)");
+            console.log("Conversión enviada a ExoClick");
+
+            // 2. Tracking Google Analytics 4
+            if (typeof gtag === 'function') {
+                gtag('event', 'whatsapp_click', {
+                    'event_category': 'CTA',
+                    'event_label': locationName,
+                    'value': 1
+                });
+                console.log("Evento enviado a GA: whatsapp_click | Label: " + locationName);
+            }
         }
     </script>
 
@@ -145,7 +155,7 @@
                 <a href="#beneficios" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Beneficios</a>
                 <a href="#precios" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Precios</a>
                 <a href="#catalogo" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Catalogo</a>
-                <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion()" class="bg-forbidden-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold text-sm uppercase transition-all duration-300 glow-button flex items-center gap-2">
+                <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion('navbar_button')" class="bg-forbidden-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold text-sm uppercase transition-all duration-300 glow-button flex items-center gap-2">
                     <i class="fab fa-whatsapp"></i> Pedir Ahora
                 </a>
             </div>
@@ -164,7 +174,7 @@
         <div class="px-6 py-4 space-y-4">
             <a href="#beneficios" class="block text-base font-bold uppercase tracking-wider text-gray-300 hover:text-forbidden-red transition-colors mobile-link">Beneficios</a>
             <a href="#precios" class="block text-base font-bold uppercase tracking-wider text-gray-300 hover:text-forbidden-red transition-colors mobile-link">Precios</a>
-            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion()" class="block w-full text-center bg-forbidden-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold text-sm uppercase transition-all duration-300 shadow-lg mobile-link">
+            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion('mobile_menu_button')" class="block w-full text-center bg-forbidden-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold text-sm uppercase transition-all duration-300 shadow-lg mobile-link">
                 <i class="fab fa-whatsapp mr-2"></i> Pedir Ahora
             </a>
         </div>
@@ -191,7 +201,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style="animation-delay: 0.3s;">
-            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion()" class="w-full sm:w-auto px-10 py-5 bg-forbidden-red hover:bg-red-700 text-white text-xl font-bold rounded-md transition-all transform hover:scale-105 glow-button flex items-center justify-center gap-3">
+            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion('hero_cta_button')" class="w-full sm:w-auto px-10 py-5 bg-forbidden-red hover:bg-red-700 text-white text-xl font-bold rounded-md transition-all transform hover:scale-105 glow-button flex items-center justify-center gap-3">
                 <i class="fab fa-whatsapp text-2xl"></i> PEDIR AHORA
             </a>
             <a href="#como-funciona" class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xl font-bold rounded-md border border-white/20 transition-all flex items-center justify-center gap-3">
@@ -338,7 +348,7 @@
                         <span class="text-gray-400 text-sm">Precio único</span>
                         <span class="text-4xl font-display text-white">$5.000 <span class="text-lg text-gray-500">COP</span></span>
                     </div>
-                    <a href="https://wa.me/573244506030text=Hola,%20quiero%20comprar%20una%20escena%20o%20clip." onclick="trackConversion()"
+                    <a href="https://wa.me/573244506030text=Hola,%20quiero%20comprar%20una%20escena%20o%20clip." onclick="trackConversion('pricing_clip')"
                        class="block w-full py-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-bold text-center transition-colors">
                         Contactar Ahora
                     </a>
@@ -370,7 +380,7 @@
                         <span class="text-gray-400 text-sm">Mejor Valor</span>
                         <span class="text-5xl font-display text-white">$10.000 <span class="text-lg text-gray-500">COP</span></span>
                     </div>
-                    <a href="https://wa.me/573244506030?text=Hola,%20quiero%20comprar%20una%20pel%C3%ADcula%20completa." onclick="trackConversion()" class="block w-full py-4 rounded-lg bg-forbidden-red hover:bg-red-700 text-white font-bold text-center transition-all glow-button">
+                    <a href="https://wa.me/573244506030?text=Hola,%20quiero%20comprar%20una%20pel%C3%ADcula%20completa." onclick="trackConversion('pricing_full_movie')" class="block w-full py-4 rounded-lg bg-forbidden-red hover:bg-red-700 text-white font-bold text-center transition-all glow-button">
                         Contactar Ahora
                     </a>
                 </div>
@@ -424,7 +434,7 @@
 
         <div class="mt-16 text-center">
             <p class="text-xs text-gray-500 italic mb-6">* Tiempo de respuesta promedio: menos de 30 minutos.</p>
-            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion()" class="inline-flex items-center justify-center px-8 py-3 bg-forbidden-red hover:bg-red-700 text-white font-bold text-lg rounded transition-all transform hover:scale-105 shadow-lg shadow-red-900/40 glow-button">
+            <a href="https://wa.me/573244506030?text=Hola%2C%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion('steps_cta_button')" class="inline-flex items-center justify-center px-8 py-3 bg-forbidden-red hover:bg-red-700 text-white font-bold text-lg rounded transition-all transform hover:scale-105 shadow-lg shadow-red-900/40 glow-button">
                 <i class="fab fa-whatsapp mr-2"></i> Iniciar Pedido
             </a>
         </div>
@@ -531,7 +541,7 @@
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="font-display text-5xl md:text-7xl text-gray-800 mb-8 uppercase select-none hover:text-gray-700 transition-colors">Zona Prohibida</h2>
 
-        <a href="https://wa.me/573244506030?text=Hola,%20%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion()"
+        <a href="https://wa.me/573244506030?text=Hola,%20%20estoy%20interesado%20en%20adquirir%20alguna%20escena%20o%20pel%C3%ADcula.%20%C2%BFMe%20podr%C3%ADas%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" onclick="trackConversion('footer_cta_button')"
            class="inline-block bg-forbidden-red text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-700 transition-all glow-button mb-12">
             <i class="fab fa-whatsapp mr-2"></i> Contactar Ahora
         </a>
